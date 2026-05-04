@@ -11,7 +11,7 @@ resource "aws_instance" "terraform" {
 }
 
 resource "aws_security_group" "allow-1" {
-  name = Name = "${local.common_name}-sg"
+  name = "${local.common_name}-sg"
 
   ingress {
     from_port = var.ingress_from_port
