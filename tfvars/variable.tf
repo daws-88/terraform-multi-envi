@@ -41,10 +41,3 @@ variable "project" {
 variable "environment" {
     type = string
 }
-
-variable "common_tags" {
-    default = {
-        project = "roboshop"
-        terraform = "true"
-    }
-}

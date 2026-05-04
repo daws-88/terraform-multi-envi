@@ -6,11 +6,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "remote-state-88"
-    key            = "terraform-demo"
-    use_lockfile = true
-    encrypt = true
-    region         = "us-east-1"
+  
   }
 }
 
