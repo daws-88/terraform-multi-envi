@@ -1,17 +1,17 @@
 resource "aws_instance" "terraform" {
   ami = var.ami_id
-  instance_type = var.instance_type
+  instance_type = lookup(var.instance_type,terraform.workspace)
   vpc_security_group_ids = [aws_security_group.allow-1.id]
   tags = merge(
     local.common_tags,
     {
-        Name = "${local.common_name}-env"
+        Name = "${local.common_name}-workspace"
     }
   )
 }
 
 resource "aws_security_group" "allow-1" {
-  name ="${local.common_name}-sg"
+  name ="${local.common_name}-workspace"
 
   ingress {
     from_port = var.ingress_from_port
@@ -29,7 +29,7 @@ resource "aws_security_group" "allow-1" {
    tags = merge(
     local.common_tags,
     {
-        Name = "${local.common_name}-sg"
+        Name = "${local.common_name}-workspace"
     }
   )
 }

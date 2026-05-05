@@ -4,7 +4,11 @@ variable "ami_id" {
 }
 
 variable "instance_type" {
-    type = string
+   type = map 
+   default = {
+     dev = "t3.micro"
+     prod = "t3.small"
+   }
 }
 
 variable "cidir" {
@@ -39,7 +43,11 @@ variable "project" {
 }
 
 variable "environment" {
-    type = string
+    type = map
+    default = {
+      dev = "dev"
+      prod = "prod"
+    }
 }
 
 variable "common_tags" {

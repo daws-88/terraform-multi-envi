@@ -1,5 +1,5 @@
-bucket  = "remote-state-88-dev"
-key   = "terraform-env"
+bucket = "remote-state-88-dev"
+key  = "terraform-env"
 use_lockfile = true
 encrypt = true
 region  = "us-east-1"
